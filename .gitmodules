@@ -1,0 +1,9 @@
+[submodule "port_engine_device"]
+	path = port_engine_device
+	url = https://github.com/bcrowe306/port_engine_device.git
+[submodule "rtmidi"]
+	path = rtmidi
+	url = https://github.com/bcrowe306/odin_rtmidi.git
+[submodule "libsndfile"]
+	path = libsndfile
+	url = https://github.com/bcrowe306/lbsndfile_odin.git
