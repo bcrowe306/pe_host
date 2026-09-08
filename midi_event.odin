@@ -1,0 +1,6 @@
+package main
+
+
+MidiEvent :: struct {
+
+}

@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  run:
+    desc: Run the application
+    cmds:
+      - odin run .
+    silent: true
+
+  device:
+    desc: Compile the device_template into a shared library
+    vars:
+      DEVICE_FILE_NAME: device_1.dylib
+      DEVICE_FILE_PATH: ./device_template
+      DEVICE_FINAL_NAME: device.dylib
+    cmds:
+      - odin build {{.DEVICE_FILE_PATH}} -build-mode:shared -out:{{.DEVICE_FILE_NAME}}
+      - mv {{.DEVICE_FILE_NAME}} {{.DEVICE_FINAL_NAME}}
+
+  scratch:
+    desc: Run scratch
+    cmds:
+      - odin run ./scratch -collection:gui=lib/skald
